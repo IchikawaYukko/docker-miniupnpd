@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  miniupnpd:
+    image: ichikawayukko/miniupnpd
+    cap_add:
+      - NET_ADMIN
+    network_mode: host
+    command: "-i enp0s3 -a enp0s3 -S -U -m 3.10.0-327.el7.x86_64 -s x86_64 -f /etc/miniupnpd/miniupnpd.conf -d"
+    # Network interface name "enp0s3" is just example.
+    # Please modify as your environment.
